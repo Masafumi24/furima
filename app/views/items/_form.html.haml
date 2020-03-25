@@ -1,0 +1,31 @@
+= form_for @item do |f|
+  #image-box
+    = f.fields_for :images do |image|
+      .js-file_group{"data-index" => "#{image.index}"}
+        = image.file_field :src, class: 'js-file'
+        .js-remove 削除
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :price
+    = f.text_field :price
+  .field
+    = f.label :explaination
+    = f.text_field :explaination
+  .field
+    = f.label :conditon
+    = f.text_field :conditon
+  .field
+    = f.label :date
+    = f.number_field :date
+  .field
+    = f.label :brand
+    = f.text_field :brand
+  .field
+    = f.label :prefecture_id
+    = f.number_field :prefecture_id
+  .field
+    = f.label :responsibility
+    = f.text_field :responsibility
+  = f.submit
