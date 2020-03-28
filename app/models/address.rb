@@ -1,4 +1,7 @@
 class Address < ApplicationRecord
-  belongs_to :user, optional: true
-  validates :zipcode, :address ,presence: true
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
+  belongs_to_active_hash :condition
+  belongs_to_active_hash :responsibility
+  belongs_to_active_hash :shipment
 end

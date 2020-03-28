@@ -5,27 +5,27 @@
         = image.file_field :src, class: 'js-file'
         .js-remove 削除
   .field
-    = f.label :name
+    = f.label :商品名
     = f.text_field :name
   .field
-    = f.label :price
+    = f.label :値段
     = f.text_field :price
   .field
-    = f.label :explaination
+    = f.label :商品紹介
     = f.text_field :explaination
   .field
-    = f.label :conditon
-    = f.text_field :conditon
+    = f.label :商品の状態
+    = f.collection_select :condition_id, Condition.all, :id, :name, prompt: "選択して下さい"
   .field
-    = f.label :date
-    = f.number_field :date
+    = f.label :発送までの日数
+    = f.collection_select :shipment_id, Shipment.all, :id, :name, prompt: "選択して下さい"
   .field
-    = f.label :brand
+    = f.label :ブランド
     = f.text_field :brand
   .field
-    = f.label :prefecture_id
-    = f.number_field :prefecture_id
+    = f.label :都道府県
+    = f.collection_select :prefecture_id, Prefecture.all, :id, :name
   .field
-    = f.label :responsibility
-    = f.text_field :responsibility
+    = f.label :配送料の負担
+    = f.collection_select :responsibility_id, Responsibility.all, :id, :name, prompt: "選択して下さい"
   = f.submit
