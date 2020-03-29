@@ -4,5 +4,5 @@
     = item.price
     円
     = item.prefecture.name
-  - item.images.each do |image|
-    = image_tag image.src.url
+    - item.images.each do |image|
+      = image_tag image.src.url
