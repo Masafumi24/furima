@@ -28,13 +28,12 @@
   .field
     = f.label :配送料の負担
     = f.collection_select :responsibility_id, Responsibility.all, :id, :name, prompt: "選択して下さい"
-  .field
-    .listing-form-box
-      .listing-product-detail__category
-        = f.label 'カテゴリー', class: 'listing-default__label'
-        %span.listing-default--require 必須
-        .listing-select-wrapper
-          .listing-select-wrapper__box
-            = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-            %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+  .listing-form-box
+    .listing-product-detail__category
+      = f.label 'カテゴリー', class: 'listing-default__label'
+      %span.listing-default--require 必須
+      .listing-select-wrapper
+        .listing-select-wrapper__box
+          = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+          %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
   = f.submit
